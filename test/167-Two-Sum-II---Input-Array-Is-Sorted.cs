@@ -1,17 +1,12 @@
 public class Solution {
     public int[] TwoSum(int[] numbers, int target) {
-            int[] arr = new int[2];
-            Hashtable myHash = new Hashtable();
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                int complement=target-numbers[i];
-                if (myHash.ContainsKey(complement))
-                {
-                    
-                    return new int[] { (int)myHash[complement]+1,i+1 };
-                }
-                if (!myHash.Contains(numbers[i])) myHash.Add(numbers[i], i);
+        int l=0,r=numbers.Length-1;
+        while(l<r){
+            if(numbers[l]+numbers[r]==target)return new int[]{l+1,r+1};
+            else if(numbers[l]+numbers[r]>target)r--;
+            else if(numbers[l]+numbers[r]<target)l++;
         }
-            return arr;
+        return null;
+
     }
 }
