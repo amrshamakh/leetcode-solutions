@@ -1,13 +1,11 @@
 public class Solution {
     public bool ContainsDuplicate(int[] nums) {
-        Hashtable myHash=new Hashtable();
-        for (int i = 0; i < nums.Length; i++) {
-            if (myHash.ContainsKey(nums[i]))  return true; 
-            else{
-                    myHash.Add(nums[i], i);
-             }
-                
+          HashSet<int> result = new HashSet<int>();
+            for (int i = 0; i < nums.Length; i++) { 
+            result.Add(nums[i]);
             }
+            if (result.Count < nums.Length) return true;
+
             return false;
     }
 }
