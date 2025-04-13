@@ -1,0 +1,2 @@
+/* Write your T-SQL query statement below */
+select W1.Id from Weather W1 , Weather W2 where W1.recordDate=DATEADD(DAY, +1, W2.recordDate) and W1.temperature>W2.temperature
