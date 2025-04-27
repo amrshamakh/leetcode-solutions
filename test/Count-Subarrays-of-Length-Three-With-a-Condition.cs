@@ -10,7 +10,7 @@ public class Solution {
         int count=0;
         for(int i=0;i<nums.Length-2;i++){
             int j=i+1,k=i+2;
-            if(nums[i]+nums[k]==(float)nums[j]/2)count++;
+            if(2*(nums[i]+nums[k])==nums[j])count++;
         }
         return count;
     }
