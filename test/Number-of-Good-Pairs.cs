@@ -1,14 +1,12 @@
 public class Solution {
     public int NumIdenticalPairs(int[] nums) {
+        int res=0;
         Dictionary<int,int>freq=new Dictionary<int,int>();
         foreach(int num in nums){
-            if(!freq.ContainsKey(num))freq.Add(num,0);
+            if(freq.ContainsKey(num)){
+            res+=freq[num];
             freq[num]++;
-        }
-        int res=0;
-        foreach(int n in freq.Values){
-           int val= n*(n-1)/2;
-           res+=val;
+            }else freq.Add(num,1);
         }
         return res;
     }
