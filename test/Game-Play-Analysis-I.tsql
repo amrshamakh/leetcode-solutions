@@ -1,0 +1,2 @@
+/* Write your T-SQL query statement below */
+select player_id ,event_date  'first_login' from (select player_id ,event_date, ROW_NUMBER() OVER (PARTITION BY player_id ORDER BY event_date )AS RN from Activity  )as Tab where RN=1
